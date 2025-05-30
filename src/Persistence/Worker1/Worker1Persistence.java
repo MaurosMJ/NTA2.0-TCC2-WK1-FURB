@@ -21,7 +21,7 @@ public class Worker1Persistence {
 // [HTTP]
         public String http_Endpoint;
         public int http_Operacao;
-        public int http_Protocolo;
+        public String http_Protocolo;
         public String http_Parametros;
         public String http_Url;
 

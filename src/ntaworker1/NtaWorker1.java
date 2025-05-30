@@ -9,7 +9,9 @@ import Persistence.Worker1.Worker1Persistence;
 import Persistence.JsonPersistence;
 import Service.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -36,6 +38,30 @@ public class NtaWorker1 {
         MonitoringArray.addAll(listaMonitoramento);
     }
 
+    public Map<String, String> parseParametersString(String parameters) {
+        Map<String, String> paramMap = new HashMap<>();
+
+        if (parameters != null && !parameters.trim().isEmpty()) {
+            String[] tokens = parameters.trim().split("\\s+");
+
+            String currentKey = null;
+            for (String token : tokens) {
+                if (token.endsWith(":")) {
+                    // Remover ":" do final para usar como chave
+                    currentKey = token.substring(0, token.length() - 1).trim();
+                } else if (currentKey != null) {
+                    // A palavra seguinte é o valor
+                    paramMap.put(currentKey, token.trim());
+                    currentKey = null; // Resetar para esperar nova chave
+                } else {
+                    System.out.println("Par inválido ignorado: " + token);
+                }
+            }
+        }
+
+        return paramMap;
+    }
+
     public static void main(String[] args) {
         NtaWorker1 instance = new NtaWorker1();
 
@@ -49,7 +75,14 @@ public class NtaWorker1 {
                             try {
                                 switch (monitoring.workspace.toUpperCase()) {
                                     case "HTTP":
-                                        // TODO: Implementar quando necessário
+                                        HttpClient http = new HttpClient(session.http_Protocolo, session.http_Endpoint, session.http_Parametros);
+                                        if (session.http_Operacao == 0) {
+                                            http.sendGetRequest();
+                                            break;
+                                        }
+                                            Map<String, String> parametrosMap;
+                                            parametrosMap = instance.parseParametersString(session.http_Parametros);
+                                            http.sendPutRequest(parametrosMap);
                                         break;
 
                                     case "DNS":
@@ -87,8 +120,8 @@ public class NtaWorker1 {
                                         break;
 
                                     case "ICMP":
-                              //          IcmpClient icmp = new IcmpClient(session.icmp_Servidor, session.icmp_Quantidade);
-                            //            icmp.PerformServerConnection();
+                                        //          IcmpClient icmp = new IcmpClient(session.icmp_Servidor, session.icmp_Quantidade);
+                                        //            icmp.PerformServerConnection();
                                         break;
 
                                     case "NTP":
@@ -164,7 +197,7 @@ public class NtaWorker1 {
                                 }
                             } catch (Exception ex) {
                                 System.out.println("Erro ao processar sessão para workspace " + monitoring.workspace + ": " + ex.getMessage());
-                                ex.printStackTrace(); 
+                                ex.printStackTrace();
                             }
                         }
                     }
