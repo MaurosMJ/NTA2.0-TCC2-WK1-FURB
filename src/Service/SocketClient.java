@@ -21,9 +21,11 @@ public class SocketClient {
 
     private final StringWriter sw = new StringWriter();
     private final PrintWriter pw = new PrintWriter(sw);
+    private String host;
     private final ArrayList<LogOccurrenceModule> LogArray = new ArrayList<>();
 
     public ArrayList<LogOccurrenceModule> PerformServerConnection(String host, String port) {
+        this.host = host;
         if (host == null || host.isEmpty() || Integer.parseInt(port) <= 0) {
             this.addToArray("Argumentos inválidos para estabelecer a conexão.", LogLevel.ERROR);
         }
@@ -44,7 +46,7 @@ public class SocketClient {
 
     private void addToArray(String input, LogLevel level) {
 
-        LogOccurrenceModule log = new LogOccurrenceModule(input, level);
+        LogOccurrenceModule log = new LogOccurrenceModule(input, level, this.host);
         this.LogArray.add(log);
     }
 

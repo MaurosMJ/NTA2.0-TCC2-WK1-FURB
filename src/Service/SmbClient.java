@@ -330,7 +330,7 @@ public class SmbClient {
     }
 
     private void addLog(String message, LogLevel level) {
-        logArray.add(new LogOccurrenceModule(message, level));
+        logArray.add(new LogOccurrenceModule(message, level, this.shost));
     }
 
     public List<LogOccurrenceModule> getLogArray() {

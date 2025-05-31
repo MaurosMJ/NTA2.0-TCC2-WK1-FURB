@@ -87,7 +87,7 @@ public class DnsClient {
     }
 
     private void addToArray(String input, LogLevel level) {
-        LogOccurrenceModule log = new LogOccurrenceModule(input, level);
+        LogOccurrenceModule log = new LogOccurrenceModule(input, level, getHost());
         this.LogArray.add(log);
     }
 

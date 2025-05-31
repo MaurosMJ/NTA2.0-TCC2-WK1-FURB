@@ -22,10 +22,12 @@ public class SmtpClient {
 
     private final StringWriter sw = new StringWriter();
     private final PrintWriter pw = new PrintWriter(sw);
+    private String host;
     private final ArrayList<LogOccurrenceModule> LogArray = new ArrayList<>();
 
     public ArrayList<LogOccurrenceModule> PerformServerConnection(String host, String port, String aut, String prot, String stls, String rem, String pwd, String des, String tmsg, String pmsg) {
 
+        this.host = host;
         Properties props = new Properties();
         configureSmtpProperties(props, aut, stls, host, port, prot);
 
@@ -71,7 +73,7 @@ public class SmtpClient {
 
     private void addToArray(String input, LogLevel level) {
 
-        LogOccurrenceModule log = new LogOccurrenceModule(input, level);
+        LogOccurrenceModule log = new LogOccurrenceModule(input, level, host);
         this.LogArray.add(log);
     }
 

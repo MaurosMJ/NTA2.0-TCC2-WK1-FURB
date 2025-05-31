@@ -14,5 +14,11 @@ public enum Module {
     SMB,
     SMTP,
     SOCKET,
-    HTTP;
+    HTTP,
+    DNS,
+    FTP,
+    NTP,
+    SSH,
+    TELNET,
+    ICMP;
 }

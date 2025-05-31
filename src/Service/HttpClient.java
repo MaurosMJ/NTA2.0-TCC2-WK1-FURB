@@ -137,7 +137,7 @@ public class HttpClient {
 
     private void addToArray(String input, LogLevel level) {
 
-        LogOccurrenceModule log = new LogOccurrenceModule(input, level);
+        LogOccurrenceModule log = new LogOccurrenceModule(input, level, this.endpoint);
         this.LogArray.add(log);
     }
 

@@ -9,13 +9,9 @@ import Entities.LogOccurrenceModule;
 import Enum.LogLevel;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.File;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.InetAddress;
-import java.net.Socket;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,7 +21,6 @@ import org.shortpasta.icmp2.IcmpPingUtil;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.URL;
 import java.net.URL;
 import java.util.HashMap;
 
@@ -48,9 +43,9 @@ public class IcmpClient {
     private LogLevel level;
     private final int qtd;
 
-    public IcmpClient(String host, String qtd) {
+    public IcmpClient(String host, int qtd) {
         this.host = host;
-        this.qtd = Integer.parseInt(qtd);
+        this.qtd = qtd;
     }
 
     public ArrayList<LogOccurrenceModule> PerformServerConnection() {
@@ -222,7 +217,7 @@ public class IcmpClient {
 
     private void addToArray(String input, LogLevel level) {
 
-        LogOccurrenceModule log = new LogOccurrenceModule(input, level);
+        LogOccurrenceModule log = new LogOccurrenceModule(input, level, this.getHostAddress());
         this.LogArray.add(log);
     }
 

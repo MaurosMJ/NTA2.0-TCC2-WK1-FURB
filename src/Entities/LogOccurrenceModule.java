@@ -22,11 +22,11 @@ public class LogOccurrenceModule {
     private LogLevel level;
     private Date Occurrence;
     
-    public LogOccurrenceModule (String data, LogLevel level){
+    public LogOccurrenceModule (String data, LogLevel level, String host){
         this.setData(data);
         this.setSeverity(level);
         this.setOccurrence(HostConfig.obterDataAtual());
-        this.setHost(HostConfig.obterNomeMaquina());
+        this.setHost(host);
         this.setSystem(HostConfig.obterSistemaOperacional());
         this.setUser(HostConfig.obterNomeUsuario());
     }

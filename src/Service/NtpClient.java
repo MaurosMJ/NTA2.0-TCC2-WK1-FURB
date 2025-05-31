@@ -45,7 +45,7 @@ public class NtpClient {
 
     private void addToArray(String input, LogLevel level) {
 
-        LogOccurrenceModule log = new LogOccurrenceModule(input, level);
+        LogOccurrenceModule log = new LogOccurrenceModule(input, level, this.host);
         this.LogArray.add(log);
     }
 
