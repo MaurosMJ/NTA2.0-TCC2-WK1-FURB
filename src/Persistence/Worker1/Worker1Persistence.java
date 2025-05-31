@@ -15,7 +15,6 @@ public class Worker1Persistence {
 
     public List<Worker1Persistence.SessionValues> session;
     public String workspace;
-    public String UUID;
 
     public static class SessionValues {
 

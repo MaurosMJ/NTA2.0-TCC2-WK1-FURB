@@ -4,15 +4,26 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Entities/LogOccurrenceModule.java</file>
-            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Utils/RoundedBorder.java</file>
-            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/ntaworker1/NtaWorker1.java</file>
+            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Entities/Usuario.java</file>
+            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Service/HttpClient.java</file>
+            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Entities/LogOcurrenceMonitoring.java</file>
             <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Service/IcmpClient.java</file>
-            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Service/DnsClient.java</file>
+            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Service/SocketClient.java</file>
             <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Service/SmbClient.java</file>
             <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Persistence/Worker1/Worker1Persistence.java</file>
-            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Service/FtpClient.java</file>
-            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Utils/HostConfig.java</file>
             <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Persistence/JsonPersistence.java</file>
+            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Enum/Module.java</file>
+            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Persistence/Logs/LogPersistence.java</file>
+            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Service/SshClient.java</file>
+            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Utils/RoundedBorder.java</file>
+            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/ntaworker1/NtaWorker1.java</file>
+            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Service/NtpClient.java</file>
+            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Utils/ManipularImagem.java</file>
+            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Service/DnsClient.java</file>
+            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Service/FtpClient.java</file>
+            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Service/Telnet_Client.java</file>
+            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Utils/HostConfig.java</file>
+            <file>file:/C:/Users/Mauros/Documents/NetBeansProjects/NtaWorker1/src/Service/SmtpClient.java</file>
         </group>
     </open-files>
 </project-private>

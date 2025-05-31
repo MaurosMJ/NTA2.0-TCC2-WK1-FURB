@@ -8,21 +8,17 @@ package ntaworker1;
 import Entities.LogOccurrenceModule;
 import Entities.LogOcurrenceMonitoring;
 import Enum.Module;
-import Enum.Role;
 import Persistence.Worker1.Worker1Persistence;
 import Persistence.JsonPersistence;
-import static Persistence.JsonPersistence.salvarJsonEmAppData;
 import Persistence.Logs.LogPersistence;
 import Service.*;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -78,8 +74,7 @@ public class NtaWorker1 {
     private void addToArray(List<LogOccurrenceModule> list, Module module, int icmp) {
 
         for (LogOccurrenceModule logs : list) {
-            //LogOcurrenceMonitoring(String host, LogLevel level, Module modulo, String log, double icmp, String occurrence)
-            LogOcurrenceMonitoring log = new LogOcurrenceMonitoring(logs.getHost(), logs.getSeverity(), module, logs.getData(), icmp, obterDataAtual());
+            LogOcurrenceMonitoring log = new LogOcurrenceMonitoring(logs.getHost(), logs.getSeverity(), module, logs.getData(), icmp, obterDataAtual(), "N");
             AddLogJsonMonitoring(log);
             this.LogArray.add(log);
         }
@@ -111,6 +106,7 @@ public class NtaWorker1 {
     }
 
     public static void main(String[] args) {
+        Locale.setDefault(new Locale("pt", "BR"));
         NtaWorker1 instance = new NtaWorker1();
 
         Thread workerThread = new Thread(() -> {

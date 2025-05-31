@@ -24,5 +24,6 @@ public class LogPersistence {
         public LogLevel level;
         public String log;
         public double icmpRequest;
+        public String notificacao;
     }
 }

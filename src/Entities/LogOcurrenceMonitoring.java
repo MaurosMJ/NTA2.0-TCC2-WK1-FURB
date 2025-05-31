@@ -13,21 +13,23 @@ import Enum.Module;
  * @author Mauros
  */
 public class LogOcurrenceMonitoring {
-    
+
     private String host;
     private LogLevel level;
     private Module modulo;
     private String log;
     private double icmp;
     private String occurrence;
+    private String notificacao;
 
-    public LogOcurrenceMonitoring(String host, LogLevel level, Module modulo, String log, double icmp, String occurrence) {
+    public LogOcurrenceMonitoring(String host, LogLevel level, Module modulo, String log, double icmp, String occurrence, String notificacao) {
         this.host = host;
         this.level = level;
         this.modulo = modulo;
         this.log = log;
         this.icmp = icmp;
         this.occurrence = occurrence;
+        this.notificacao = notificacao;
     }
 
     public String getHost() {
@@ -77,5 +79,13 @@ public class LogOcurrenceMonitoring {
     public void setOccurrence(String Occurrence) {
         this.occurrence = Occurrence;
     }
-    
+
+    public String getNotificacao() {
+        return notificacao;
+    }
+
+    public void setNotificacao(String notificacao) {
+        this.notificacao = notificacao;
+    }
+
 }
